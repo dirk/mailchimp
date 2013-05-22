@@ -66,7 +66,7 @@ func run(a *API, method string, parameters map[string]interface{}) ([]byte, erro
 	if err != nil {
 		return nil, err
 	}
-	os.Stdout.Write(body)
+	//os.Stdout.Write(body)
 	if err = errorCheck(body); err != nil {
 		return nil, err
 	}
