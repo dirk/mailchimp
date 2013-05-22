@@ -47,6 +47,10 @@ func New(apikey string, https ...bool) (*API, error) {
 	return &API{apikey, u.String() + "?method="}, nil
 }
 
+func (a *API) Run(method string, params map[string]interface{}) ([]byte, error) {
+  return run(a, method, params)
+}
+
 func run(a *API, method string, parameters map[string]interface{}) ([]byte, error) {
 	if parameters == nil {
 		parameters = make(map[string]interface{})
